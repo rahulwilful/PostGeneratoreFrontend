@@ -298,8 +298,8 @@
           <div id="app" class="form-container shadow-lg d-flex align-items-center justify-content-center flex-shrink" style="width: 90%">
             <div class="row w-100">
               <div class="col-md-7 offset-md-3">
-                <h2 class="mb-4">Duo</h2>
-                <form @submit.prevent="handleSubmit" enctype="multipart/form-data" class="">
+                <h2 class="mb-4 text-light">Duo</h2>
+                <form @submit.prevent="handleSubmit" enctype="multipart/form-data" class="text-light">
                   <div class="mb-3">
                     <label for="image" class="form-label fw-semibold">Image 1</label>
                     <input type="file" class="form-control" id="image" @change="handleImageChange" />
@@ -323,12 +323,29 @@
                   <div class="mb-3">
                     <label for="details" class="form-label fw-semibold">News Heading</label>
                     <input class="form-control text-capitalize" placeholder="Sports/News/Politics/Notice" id="floatingTextarea" v-model="formData.heading" maxlength="48" />
-                    <div class="text-muted mt-1">{{ formData.heading ? formData.heading.length : 0 }} / 48</div>
+                    <div class="text-muted mt-1 text-light" style="color: white !important; font-weight: 500">{{ formData.heading ? formData.heading.length : 0 }} / 48</div>
                   </div>
                   <div class="mb-3">
                     <label for="details" class="form-label fw-semibold">Details</label>
                     <textarea class="form-control" placeholder="Enter Details" id="floatingTextarea" v-model="formData.details" maxlength="250"></textarea>
-                    <div class="text-muted mt-1">{{ formData.details ? formData.details.length : 0 }} / 250</div>
+                    <div class="text-muted mt-1 text-light" style="color: white !important; font-weight: 500">{{ formData.details ? formData.details.length : 0 }} / 250</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-6">
+                      <label for="details" class="form-label fw-semibold" style="color: white; font-weight: 600 !important; text-transform: uppercase">Text Size</label>
+                      <input class="form-control text-capitalize" type="number" id="floatingTextarea" v-model="textSize" />
+                    </div>
+                    <!-- <div class="col-md-6 col-6">
+                      <label for="details" class="form-label fw-semibold"
+                        >Text Size</label
+                      >
+                      <input
+                        class="form-control text-capitalize"
+                        type="number"
+                        id="floatingTextarea"
+                        v-model="textSize"
+                      />
+                    </div> -->
                   </div>
 
                   <div class="">
@@ -347,8 +364,8 @@
             <div id="app" class="form-container shadow-lg d-flex align-items-center justify-content-center flex-shrink" style="width: 90%">
               <div class="row w-100">
                 <div class="col-md-7 offset-md-3">
-                  <h2 class="mb-4">Duo</h2>
-                  <form @submit.prevent="handleSubmit" enctype="multipart/form-data" class="">
+                  <h2 class="mb-4 text-light">Duo</h2>
+                  <form @submit.prevent="handleSubmit" enctype="multipart/form-data" class="text-light">
                     <div class="mb-3">
                       <label for="image" class="form-label fw-semibold">Image 1</label>
                       <input type="file" class="form-control" id="image" @change="handleImageChange" />
@@ -372,13 +389,29 @@
                     <div class="mb-3">
                       <label for="details" class="form-label fw-semibold">News Heading</label>
                       <input class="form-control text-capitalize" placeholder="Sports/News/Politics/Notice" id="floatingTextarea" v-model="formData.heading" maxlength="48" />
-                      <div class="text-muted mt-1">{{ formData.heading ? formData.heading.length : 0 }} / 48</div>
+                      <div class="text-muted mt-1 text-light" style="color: white !important; font-weight: 500">{{ formData.heading ? formData.heading.length : 0 }} / 48</div>
                     </div>
-
                     <div class="mb-3">
                       <label for="details" class="form-label fw-semibold">Details</label>
                       <textarea class="form-control" placeholder="Enter Details" id="floatingTextarea" v-model="formData.details" maxlength="250"></textarea>
-                      <div class="text-muted mt-1">{{ formData.details ? formData.details.length : 0 }} / 250</div>
+                      <div class="text-muted mt-1 text-light" style="color: white !important; font-weight: 500">{{ formData.details ? formData.details.length : 0 }} / 250</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-6">
+                        <label for="details" class="form-label fw-semibold" style="color: white; font-weight: 600 !important; text-transform: uppercase">Text Size</label>
+                        <input class="form-control text-capitalize" type="number" id="floatingTextarea" v-model="textSize" />
+                      </div>
+                      <!-- <div class="col-md-6 col-6">
+                      <label for="details" class="form-label fw-semibold"
+                        >Text Size</label
+                      >
+                      <input
+                        class="form-control text-capitalize"
+                        type="number"
+                        id="floatingTextarea"
+                        v-model="textSize"
+                      />
+                    </div> -->
                     </div>
 
                     <div class="">
@@ -434,8 +467,8 @@
                   </div>
                   <div v-auto-animate class="preview-details text-dark d-flex justify-content-center">
                     <div class="preview-details-body bg-light rounded py-2 px-2 text-center border border-warning overflow-x-hidden overflow-y-auto">
-                      <h6 v-if="isMobile <= 529" class="fw-bold news-heading text-uppercase">{{ formData.heading }}</h6>
-                      <h5 v-if="isMobile > 529" class="fw-bold news-heading text-uppercase">{{ formData.heading }}</h5>
+                      <h6 v-if="isMobile <= 529" class="fw-bold news-heading text-uppercase" :style="{ fontSize: textSize + 'px' }">{{ formData.heading }}</h6>
+                      <h5 v-if="isMobile > 529" class="fw-bold news-heading text-uppercase" :style="{ fontSize: textSize + 'px' }">{{ formData.heading }}</h5>
                     </div>
                   </div>
                 </div>
@@ -443,11 +476,11 @@
                   <div class="preview-content-details text-light">
                     <span v-if="isMobile <= 529">
                       <!-- Render h6 when screen width is less than or equal to 529px -->
-                      <h6 class="fw-bolder" style="text-align: center">{{ formData.details }}</h6>
+                      <h6 class="fw-bolder" style="text-align: center" :style="{ fontSize: textSize + 'px' }">{{ formData.details }}</h6>
                     </span>
                     <span v-if="isMobile > 529">
                       <!-- Render h5 when screen width is greater than 529px -->
-                      <h5 class="fw-bold" style="text-align: center">{{ formData.details }}</h5>
+                      <h5 class="fw-bold" style="text-align: center" :style="{ fontSize: textSize + 'px' }">{{ formData.details }}</h5>
                     </span>
                   </div>
                 </div>
@@ -509,7 +542,7 @@
                 <div class="preview2-content-details text-light">
                   <span>
                     <!-- Render h5 when screen width is greater than 529px -->
-                    <h5 class="fw-bold" style="text-align: center; opacity: 1">{{ formData.details }}</h5>
+                    <h5 class="fw-bold" style="text-align: center; opacity: 1" :style="{ fontSize: textSize + 5 + 'px' }">{{ formData.details }}</h5>
                   </span>
                 </div>
               </div>
@@ -528,6 +561,8 @@
 </template>
 
 <script>
+import axiosClient from "../axiosClient";
+
 import { toast } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
 import html2canvas from "html2canvas";
@@ -542,15 +577,18 @@ export default {
 
   data() {
     return {
+      loggedIn: false,
       positionOptions: ["top", "center", "bottom", "left", "right"],
       position: "0",
       post: true,
       position2: "0",
+      textSize: 14,
       breaking: true,
       clash: false,
       isMobile: false,
       submited: false,
       downloaded: false,
+
       formData: {
         details: "",
         image: null,
@@ -562,12 +600,28 @@ export default {
     };
   },
 
-  created() {
-    this.formData.details = this.details;
-    this.formData.tag = this.tag;
-    this.formData.image = this.image;
+  async created() {
+    const auth = {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    };
 
-    console.log(this.details, this.tag, this.image);
+    try {
+      const token = await axiosClient.get("user/getcurrentuser/"); /* .catch((err) => {
+        console.log(err);
+        if (err.response.status == 401) {
+          this.$router.push("/login");
+        }
+      }); */
+
+      /* console.log(this.profile_url); */
+    } catch (e) {
+      console.log("error: ", e);
+      this.$router.push("/login");
+    }
+
+    this.loggedIn = true;
   },
 
   mounted() {

@@ -88,6 +88,22 @@ export default {
       },
     };
   },
+  async created() {
+    const auth = {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    };
+
+    try {
+      const token = await axiosClient.get("user/getcurrentuser/");
+      if (token) {
+        this.$router.push("/");
+      }
+    } catch (e) {
+      console.log("error: ", e);
+    }
+  },
   methods: {
     async handleLogin() {
       this.error = [];
@@ -115,15 +131,20 @@ export default {
             });
           }
         });
-        console.log("User loggedin successfully", response.data);
-        console.log("User loggedin successfully", response.data.token);
-        localStorage.setItem("token", response.data.token);
-        toast.success("Log In Successfull", {
-          autoClose: 1500,
-        });
-        setTimeout(() => {
-          this.$router.push("/postgeneration");
-        }, 1500);
+        if (response.data) {
+          localStorage.setItem("token", response.data.token);
+          toast.success("Log In Successfull", {
+            autoClose: 1500,
+          });
+          setTimeout(() => {
+            //this.$router.push("/postgeneration");
+            window.location.href = "/postgeneration";
+          }, 1500);
+        } else {
+          toast.error("Login Error", {
+            autoClose: 1500,
+          });
+        }
       } else {
         console.log("Form Values Are ", this.form, this.error);
         for (let i in this.error) {
@@ -132,7 +153,6 @@ export default {
           });
         }
       }
-      console.log("Logging in...");
     },
   },
 };

@@ -12,7 +12,6 @@ import Login from "./pages/Login.vue";
     <!-- <Duo class="pt-5" /> -->
     <!--  <Login class="pt-5" /> -->
     <router-view class="pt-5" />
-    <Header class="position-absolute top-0 start-0" />
   </div>
 </template>
 

@@ -277,27 +277,46 @@
           <div id="app" class="form-container shadow-lg d-flex align-items-center justify-content-center flex-shrink" style="width: 90%">
             <div class="row w-100">
               <div class="col-md-7 offset-md-3">
-                <h2 class="mb-4">Generate Post</h2>
+                <h2 class="mb-4" style="text-align: center; text-transform: uppercase; color: white; font-weight: 500">Generate Post</h2>
                 <form @submit.prevent="handleSubmit" enctype="multipart/form-data" class="">
                   <div class="mb-3">
-                    <label for="image" class="form-label fw-semibold">Image</label>
-                    <input type="file" class="form-control" id="image" @change="handleImageChange" />
+                    <label for="image" class="form-label fw-semibold" style="color: white; font-weight: 600 !important; text-transform: uppercase">Image</label>
+                    <input type="file" class="form-control" id="image" style="font-size: 15px; text-transform: capitalize" @change="handleImageChange" />
                   </div>
 
                   <div class="mb-3">
-                    <select class="form-select" aria-label="Default select example" v-model="position">
-                      <option value="0">Position</option>
-                      <option :value="item" v-for="item in positionOptions" :key="item">{{ item }}</option>
+                    <select class="form-select" aria-label="Default select example" v-model="position" style="font-size: 15px; text-transform: capitalize">
+                      <option value="0" style="font-size: 15px; text-transform: capitalize">Position</option>
+                      <option :value="item" v-for="item in positionOptions" :key="item" style="font-size: 15px; text-transform: capitalize">
+                        {{ item }}
+                      </option>
                     </select>
                   </div>
                   <div class="mb-3">
-                    <label for="details" class="form-label fw-semibold">Details</label>
+                    <label for="details" class="form-label fw-semibold" style="color: white; font-weight: 600 !important; text-transform: uppercase">Details</label>
                     <textarea class="form-control" placeholder="Enter Details" id="floatingTextarea" v-model="formData.details" maxlength="250"></textarea>
-                    <div class="text-muted mt-1">{{ formData.details.length }} / 250</div>
+                    <div class="text-muted mt-1" style="color: white !important; font-weight: 500">{{ formData.details.length }} / 250</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 col-6">
+                      <label for="details" class="form-label fw-semibold" style="color: white; font-weight: 600 !important; text-transform: uppercase">Text Size</label>
+                      <input class="form-control text-capitalize" type="number" id="floatingTextarea" v-model="textSize" />
+                    </div>
+                    <!-- <div class="col-md-6 col-6">
+                      <label for="details" class="form-label fw-semibold"
+                        >Text Size</label
+                      >
+                      <input
+                        class="form-control text-capitalize"
+                        type="number"
+                        id="floatingTextarea"
+                        v-model="textSize"
+                      />
+                    </div> -->
                   </div>
 
                   <div class="mb-3">
-                    <label for="details" class="form-label fw-semibold">Tag</label>
+                    <label for="details" class="form-label fw-semibold" style="color: white; font-weight: 600 !important; text-transform: uppercase">Tag</label>
                     <input class="form-control text-capitalize" placeholder="Sports/News/Politics/Notice" id="floatingTextarea" v-model="formData.tag" />
                   </div>
                   <div class="">
@@ -318,25 +337,44 @@
               <div id="app" class="form-container shadow-lg d-flex align-items-center justify-content-center flex-shrink" style="width: 90%">
                 <div class="row w-100">
                   <div class="col-md-7 offset-md-3">
-                    <h2 class="mb-4">Generate Post</h2>
+                    <h2 class="mb-4" style="text-align: center; text-transform: uppercase; color: white; font-weight: 500">Generate Post</h2>
                     <form @submit.prevent="handleSubmit" enctype="multipart/form-data" class="">
                       <div class="mb-3">
-                        <label for="image" class="form-label fw-semibold">Image</label>
-                        <input type="file" class="form-control" id="image" @change="handleImageChange" />
+                        <label for="image" class="form-label fw-semibold" style="color: white; font-weight: 600 !important; text-transform: uppercase">Image</label>
+                        <input type="file" class="form-control" id="image" style="font-size: 15px; text-transform: capitalize" @change="handleImageChange" />
                       </div>
                       <div class="mb-3">
-                        <select class="form-select" aria-label="Default select example" v-model="position">
-                          <option value="0">Position</option>
-                          <option :value="item" v-for="item in positionOptions" :key="item">{{ item }}</option>
+                        <select class="form-select" aria-label="Default select example" v-model="position" style="font-size: 15px; text-transform: capitalize">
+                          <option value="0" style="font-size: 15px; text-transform: capitalize">Position</option>
+                          <option :value="item" v-for="item in positionOptions" :key="item" style="font-size: 15px; text-transform: capitalize">
+                            {{ item }}
+                          </option>
                         </select>
                       </div>
                       <div class="mb-3">
-                        <label for="details" class="form-label fw-semibold">Details</label>
+                        <label for="details" class="form-label fw-semibold" style="color: white; font-weight: 600 !important; text-transform: uppercase">Details</label>
                         <textarea class="form-control" placeholder="Enter Details" id="floatingTextarea" v-model="formData.details" maxlength="250"></textarea>
-                        <div class="text-muted mt-1">{{ formData.details.length }} / 250</div>
+                        <div class="text-muted mt-1" style="color: white !important; font-weight: 500">{{ formData.details.length }} / 250</div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 col-6">
+                          <label for="details" class="form-label fw-semibold" style="color: white; font-weight: 600 !important; text-transform: uppercase">Text Size</label>
+                          <input class="form-control text-capitalize" type="number" id="floatingTextarea" v-model="textSize" />
+                        </div>
+                        <!-- <div class="col-md-6 col-6">
+                      <label for="details" class="form-label fw-semibold"
+                        >Text Size</label
+                      >
+                      <input
+                        class="form-control text-capitalize"
+                        type="number"
+                        id="floatingTextarea"
+                        v-model="textSize"
+                      />
+                    </div> -->
                       </div>
                       <div class="mb-3">
-                        <label for="details" class="form-label fw-semibold">Tag</label>
+                        <label for="details" class="form-label fw-semibold" style="color: white; font-weight: 600 !important; text-transform: uppercase">Tag</label>
                         <input class="form-control text-capitalize" placeholder="Sports/News/Politics/Notice" id="floatingTextarea" v-model="formData.tag" />
                       </div>
                       <div class="">
@@ -359,7 +397,15 @@
                     <div class="preview-body mt-1 h-100 d-flex justify-content-center">
                       <div class="preview-image">
                         <div v-auto-animate class="w-100 h-100 p-2 bg-light">
-                          <div v-auto-animate class="w-100 h-100 p-2 bg-light position-relative" :style="{ backgroundImage: 'url(' + formData.image + ')', backgroundSize: 'cover', backgroundPosition: position }">
+                          <div
+                            v-auto-animate
+                            class="w-100 h-100 p-2 bg-light position-relative"
+                            :style="{
+                              backgroundImage: 'url(' + formData.image + ')',
+                              backgroundSize: 'cover',
+                              backgroundPosition: position,
+                            }"
+                          >
                             <!--
 
                             <img :src="formData.image" class="border-0 w-100 h-100 object-fit-cover" alt="..." />
@@ -381,18 +427,22 @@
                           <div class="h-100 w-100 position-absolute start-0 top-0 preview-details-body-content">
                             <div class="d-flex justify-content-between preview-details-body-content-header mb-1">
                               <span class="bg-danger px-2 rounded text-light fw-semibold text-capitalize">{{ formData.tag }}</span>
-                              <span class="fw-semibold text-primary" style="text-decoration: underline">{{ formData.day }},{{ formData.date }}</span>
+                              <span class="fw-semibold text-primary" style="font-weight: 600 !important; /* text-transform: capitalize; */">{{ formData.day }},{{ formData.date }}</span>
                             </div>
                             <div class="d-flex preview-details-body-content-body justify-content-center px-2" style="height: calc(100% - 25px)">
                               <span class="d-flex align-items-center" style="height: 100%">
                                 <div>
                                   <span v-if="isMobile">
                                     <!-- Render h6 when screen width is less than or equal to 529px -->
-                                    <h6 class="fw-bold" style="text-align: center">{{ formData.details }}</h6>
+                                    <h6 class="fw-bold" style="text-align: center" :style="{ fontSize: textSize + 'px' }">
+                                      {{ formData.details }}
+                                    </h6>
                                   </span>
                                   <span v-else>
                                     <!-- Render h5 when screen width is greater than 529px -->
-                                    <h5 class="fw-bold" style="text-align: center">{{ formData.details }}</h5>
+                                    <h5 class="fw-bold" style="text-align: center" :style="{ fontSize: textSize + 'px' }">
+                                      {{ formData.details }}
+                                    </h5>
                                   </span>
                                 </div>
                               </span>
@@ -428,7 +478,15 @@
                 <div class="preview2-body mt-3 d-flex justify-content-center h-100">
                   <div class="preview2-image">
                     <div v-auto-animate class="w-100 h-100 p-2 bg-light">
-                      <div v-auto-animate class="w-100 h-100 bg-light uploadedImg1 position-relative" :style="{ backgroundImage: 'url(' + formData.image + ')', backgroundSize: 'cover', backgroundPosition: position }">
+                      <div
+                        v-auto-animate
+                        class="w-100 h-100 bg-light uploadedImg1 position-relative"
+                        :style="{
+                          backgroundImage: 'url(' + formData.image + ')',
+                          backgroundSize: 'cover',
+                          backgroundPosition: position,
+                        }"
+                      >
                         <!-- <img :src="formData.image" class="border-0 w-100 uploadedImg1 h-100" alt="..." /> -->
                         <div class="position-absolute top-0 end-0 mt-2 me-2">
                           <img src="../assets/CircularLogo_gn_noBg.png" class="img-thumbnail bg-transparent border-0 opacity-50 float-end" alt="..." style="width: 20%; height: auto" />
@@ -446,12 +504,14 @@
                       <div class="h-100 w-100 position-absolute start-0 top-0 preview2-details-body-content">
                         <div class="d-flex justify-content-between preview2-details-body-content-header mb-1">
                           <span class="bg-danger px-2 rounded text-light fw-semibold text-capitalize">{{ formData.tag }}</span>
-                          <span class="fw-semibold text-primary" style="text-decoration: underline">{{ formData.day }},{{ formData.date }}</span>
+                          <span class="fw-semibold text-primary" style="font-weight: 600 !important; /* text-transform: capitalize; */">{{ formData.day }},{{ formData.date }}</span>
                         </div>
                         <div class="d-flex preview2-details-body-content-body justify-content-center px-2" style="height: calc(100% - 25px)">
                           <span class="d-flex align-items-center" style="height: 100%">
                             <span>
-                              <h4 class="fw-bold" style="text-align: center">{{ formData.details }}</h4>
+                              <h4 class="fw-bold" style="text-align: center" :style="{ fontSize: textSize + 5 + 'px' }">
+                                {{ formData.details }}
+                              </h4>
                             </span>
                           </span>
                         </div>
@@ -488,11 +548,13 @@ export default {
       post: true,
       id: "",
       positionOptions: ["top", "center", "bottom", "left", "right"],
+      loggedIn: false,
       position: "0",
       clash: false,
       isMobile: false,
       submited: false,
       downloaded: false,
+      textSize: 14,
       formData: {
         details: "",
         image: null,
@@ -510,16 +572,17 @@ export default {
     };
 
     try {
-      const token = await axiosClient.get("user/getcurrentuser/").catch((err) => {
+      const token = await axiosClient.get("user/getcurrentuser/"); /* .catch((err) => {
         console.log(err);
         if (err.response.status == 401) {
           this.$router.push("/login");
         }
-      });
+      }); */
 
       /* console.log(this.profile_url); */
     } catch (e) {
       console.log("error: ", e);
+      this.$router.push("/login");
     }
   },
   mounted() {
